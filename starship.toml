@@ -1,0 +1,71 @@
+format = """
+$username\
+[](bg:cyan fg:235)\
+$directory\
+[ ](fg:cyan)\
+$git_branch\
+$rust\
+$java\
+$nodejs\
+$python\
+$fill\
+$cmd_duration $jobs $time\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+
+[username]
+show_always = true
+style_root = "bold red"
+style_user = "bold bg:235"
+format = "[ $user ]($style)"
+
+[directory]
+style = "bold fg:white bg:cyan"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
+read_only = " 🔒"
+truncation_length = 8
+truncation_symbol = "...\\"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[✖](bold red)"
+vicmd_symbol = "[❮](bold purple)"
+
+[jobs]
+symbol = "⚙ "
+style = "bold red"
+format = "[$symbol]($style)"
+
+[git_branch]
+symbol = " "
+format = "[$symbol$branch]($style) "
+style = "bright-yellow"
+
+[git_metrics]
+disabled = false
+format = "([+$added]($added_style))([-$deleted]($deleted_style) )"
+
+[java]
+format = "[$symbol($version )]($style)"
+style = "blue"
+
+[rust]
+format = "[$symbol($version )]($style)"
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+
+[python]
+format = "[$symbol($version )]($style)"
+
+[cmd_duration]
+format = "⏱ [$duration]($style)"
+style = "yellow"
+
+[time]
+disabled = false
+style = "bold white"
+format = "[$time]($style)"
